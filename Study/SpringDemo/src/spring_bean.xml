@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="helloWold" class="com.spring.model.HelloWorld" scope="prototype" />
+	<bean id="userdao" class="com.spring.dao.UserDao"></bean>
+	<bean id="userService" class="com.spring.service.UserService">
+		<property name="userDao" ref="userdao"></property>
+	</bean>
+	<bean id="userAction" class="com.spring.action.UserAction" >
+		<property name="service" ref="userService"></property>
+	</bean>
+</beans>
+        
